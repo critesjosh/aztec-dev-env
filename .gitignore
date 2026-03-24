@@ -6,3 +6,4 @@ src/artifacts/
 .pxe/
 *.log
 .DS_Store
+.setup-done

@@ -11,8 +11,11 @@ CONFIG="$SCRIPT_DIR/.devcontainer/devcontainer.json"
 echo "Starting Aztec Sandbox..."
 devcontainer up --workspace-folder "$SCRIPT_DIR" --config "$CONFIG" --skip-post-create
 
-echo "Running setup..."
-devcontainer exec --workspace-folder "$SCRIPT_DIR" --config "$CONFIG" bash .devcontainer/setup.sh
-
 echo "Entering container..."
-devcontainer exec --workspace-folder "$SCRIPT_DIR" --config "$CONFIG" bash -l
+devcontainer exec --workspace-folder "$SCRIPT_DIR" --config "$CONFIG" bash -c '
+  trap "kill 0" EXIT
+  if [ ! -f /workspaces/aztec-sandbox/.setup-done ]; then
+    bash .devcontainer/setup.sh && touch /workspaces/aztec-sandbox/.setup-done
+  fi
+  exec bash -l
+'
