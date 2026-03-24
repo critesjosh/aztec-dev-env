@@ -1,0 +1,8 @@
+node_modules/
+target/
+store/
+src/artifacts/
+.env
+.pxe/
+*.log
+.DS_Store

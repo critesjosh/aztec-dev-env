@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Usage: ./sandbox
+# Opens a persistent dev container for Aztec development with Claude Code.
+# Requires: docker, devcontainer CLI (npm install -g @devcontainers/cli)
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG="$SCRIPT_DIR/.devcontainer/devcontainer.json"
+
+echo "Starting Aztec Sandbox..."
+devcontainer up --workspace-folder "$SCRIPT_DIR" --config "$CONFIG" --skip-post-create
+
+echo "Running setup..."
+devcontainer exec --workspace-folder "$SCRIPT_DIR" --config "$CONFIG" bash .devcontainer/setup.sh
+
+echo "Entering container..."
+devcontainer exec --workspace-folder "$SCRIPT_DIR" --config "$CONFIG" bash -l
