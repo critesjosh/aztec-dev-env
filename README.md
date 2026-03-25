@@ -10,7 +10,7 @@ A development environment for building [Aztec](https://aztec.network) smart cont
 
 ## Prerequisites
 
-- [Docker](https://docs.docker.com/get-docker/) (Docker Desktop or Docker Engine)
+- [Docker](https://docs.docker.com/get-docker/) (Docker Desktop or Docker Engine) running locally
 - The [`devcontainer` CLI](https://github.com/devcontainers/cli): `npm install -g @devcontainers/cli`
 
 > **Note:** VS Code's Dev Containers extension and GitHub Codespaces are not currently supported. The base image includes a git-lfs feature whose postCreateCommand fails on repos without LFS objects, blocking all subsequent setup. The `./dev` script works around this by using `--skip-post-create`. See [#1](#) if you'd like to help fix this.
@@ -50,15 +50,15 @@ Claude has full permissions to run commands, edit files, and use all Aztec MCP t
 
 ### Useful Slash Commands
 
-| Command | Description |
-|---------|-------------|
-| `/aztec:new-contract <name>` | Create a new Aztec contract |
-| `/aztec:review-contract <path>` | Review a contract for best practices |
-| `/aztec:add-function <desc>` | Add a function to an existing contract |
-| `/aztec:add-test <desc>` | Add a test for a contract function |
-| `/aztec:explain <concept>` | Explain an Aztec concept |
-| `/aztec:deploy <contract>` | Generate a deployment script |
-| `/aztec-version` | Check or switch Aztec version |
+| Command                         | Description                            |
+| ------------------------------- | -------------------------------------- |
+| `/aztec:new-contract <name>`    | Create a new Aztec contract            |
+| `/aztec:review-contract <path>` | Review a contract for best practices   |
+| `/aztec:add-function <desc>`    | Add a function to an existing contract |
+| `/aztec:add-test <desc>`        | Add a test for a contract function     |
+| `/aztec:explain <concept>`      | Explain an Aztec concept               |
+| `/aztec:deploy <contract>`      | Generate a deployment script           |
+| `/aztec-version`                | Check or switch Aztec version          |
 
 ### Example Workflow
 
