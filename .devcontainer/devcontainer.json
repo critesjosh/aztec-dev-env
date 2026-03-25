@@ -1,10 +1,5 @@
 {
   "name": "Aztec Dev Environment",
-  "image": "mcr.microsoft.com/devcontainers/universal:5-noble",
-  "runArgs": [
-    "--network=host",
-    "--memory=16g",
-    "--cpus=8",
-    "--shm-size=2g"
-  ]
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
+  "runArgs": ["--network=host"]
 }

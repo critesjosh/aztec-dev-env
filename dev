@@ -13,9 +13,8 @@ devcontainer up --workspace-folder "$SCRIPT_DIR" --config "$CONFIG" --skip-post-
 
 echo "Entering container..."
 devcontainer exec --workspace-folder "$SCRIPT_DIR" --config "$CONFIG" bash -c '
-  trap "kill 0" EXIT
-  if [ ! -f /workspaces/aztec-dev-env/.setup-done ]; then
-    bash .devcontainer/setup.sh && touch /workspaces/aztec-dev-env/.setup-done
+  if [ ! -f .setup-done ]; then
+    bash .devcontainer/setup.sh && touch .setup-done
   fi
   exec bash -l
 '

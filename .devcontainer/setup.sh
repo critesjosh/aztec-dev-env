@@ -18,6 +18,9 @@ if ! grep -q '.aztec/current' "$HOME/.bashrc" 2>/dev/null; then
   echo 'export PATH="$HOME/.aztec/current/bin:$HOME/.aztec/current/node_modules/.bin:$HOME/.nargo/bin:$PATH"' >> "$HOME/.bashrc"
 fi
 
+echo "==> Verifying Aztec installation..."
+aztec --version || { echo "ERROR: Aztec installation failed"; exit 1; }
+
 echo "==> Adding Aztec MCP server..."
 claude mcp add aztec-mcp -- npx --prefer-online -y @aztec/mcp-server@latest
 
