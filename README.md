@@ -1,33 +1,32 @@
-# Aztec Sandbox
+# Aztec Dev Environment
 
-A sandboxed development environment for building [Aztec](https://aztec.network) smart contracts with [Claude Code](https://claude.ai/code). Opens in a devcontainer with all tooling pre-installed and Claude Code pre-configured for approval-free operation.
+A development environment for building [Aztec](https://aztec.network) smart contracts with [Claude Code](https://claude.ai/code). Opens in a devcontainer with all tooling pre-installed and Claude Code pre-configured for approval-free operation.
 
 ## What's Included
 
 - **Aztec CLI & nargo** (v4.1.0, testnet) — compile, test, and deploy contracts
-- **Claude Code** — AI-assisted development, pre-configured with full sandbox permissions
-- **Aztec Claude Plugin** — MCP server for searching Aztec docs/code/examples, plus slash commands and skills
-- **Noir MCP Server** — Noir language intelligence
+- **Claude Code** — AI-assisted development, pre-configured with full permissions
+- **Aztec MCP Server** — search Aztec docs, code, and examples from within Claude Code
 
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) (Docker Desktop or Docker Engine)
 - The [`devcontainer` CLI](https://github.com/devcontainers/cli): `npm install -g @devcontainers/cli`
 
-> **Note:** VS Code's Dev Containers extension and GitHub Codespaces are not currently supported. The base image includes a git-lfs feature whose postCreateCommand fails on repos without LFS objects, blocking all subsequent setup. The `./sandbox` script works around this by using `--skip-post-create`. See [#1](#) if you'd like to help fix this.
+> **Note:** VS Code's Dev Containers extension and GitHub Codespaces are not currently supported. The base image includes a git-lfs feature whose postCreateCommand fails on repos without LFS objects, blocking all subsequent setup. The `./dev` script works around this by using `--skip-post-create`. See [#1](#) if you'd like to help fix this.
 
 ## Getting Started
 
 ```bash
 # Clone the template (or click "Use this template" on GitHub first)
-git clone https://github.com/YOUR_USERNAME/aztec-sandbox.git
-cd aztec-sandbox
+git clone https://github.com/YOUR_USERNAME/aztec-dev-env.git
+cd aztec-dev-env
 
 # Start the container (first run takes a few minutes to install tooling)
-./sandbox
+./dev
 ```
 
-This builds the devcontainer, installs Aztec + Claude Code + plugins, and drops you into a shell.
+This builds the devcontainer, installs Aztec + Claude Code + the MCP server, and drops you into a shell.
 
 Then start Claude Code:
 
@@ -41,7 +40,7 @@ Or use `yolo` to skip all permission prompts entirely:
 yolo
 ```
 
-This runs `claude --dangerously-skip-permissions`, which lets Claude execute any action without confirmation. Only use this in disposable environments like this sandbox.
+This runs `claude --dangerously-skip-permissions`, which lets Claude execute any action without confirmation. Only use this in disposable environments.
 
 If this is your first time, log in with `claude login` (Claude subscription) or set `ANTHROPIC_API_KEY` in your environment.
 
@@ -81,7 +80,7 @@ Claude: [generates deployment script, deploys]
 
 ## Aztec Version
 
-This sandbox is pinned to **Aztec v4.1.0** (testnet). To update:
+This environment is pinned to **Aztec v4.1.0** (testnet). To update:
 
 1. Change the version in `.devcontainer/setup.sh`
 2. Update the `tag` in any `Nargo.toml` files
@@ -90,7 +89,7 @@ This sandbox is pinned to **Aztec v4.1.0** (testnet). To update:
 
 ## Permissions
 
-The `.claude/settings.local.json` grants Claude full sandbox permissions (`Bash(*)`, `Edit(*)`, `Write(*)`). This is intentional for a disposable development container. If you want tighter controls, edit that file to scope permissions down.
+The `.claude/settings.local.json` grants Claude full permissions (`Bash(*)`, `Edit(*)`, `Write(*)`). This is intentional for a disposable development container. If you want tighter controls, edit that file to scope permissions down.
 
 ## Resources
 

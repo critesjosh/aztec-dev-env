@@ -1,5 +1,5 @@
 {
-  "name": "Aztec Sandbox",
+  "name": "Aztec Dev Environment",
   "image": "mcr.microsoft.com/devcontainers/universal:5-noble",
   "runArgs": [
     "--network=host",

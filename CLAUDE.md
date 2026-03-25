@@ -1,6 +1,6 @@
-# Aztec Sandbox
+# Aztec Dev Environment
 
-This is a sandboxed environment for Aztec smart contract development with Claude Code. All tools are pre-installed and permissions are pre-configured for approval-free operation.
+This is a development environment for Aztec smart contract development with Claude Code. All tools are pre-installed and permissions are pre-configured for approval-free operation.
 
 **Aztec version: `4.1.0`** (testnet)
 
