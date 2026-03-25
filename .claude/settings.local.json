@@ -4,14 +4,14 @@
       "Bash(*)",
       "Edit(*)",
       "Write(*)",
-      "mcp__plugin_aztec_aztec__aztec_status",
-      "mcp__plugin_aztec_aztec__aztec_search_docs",
-      "mcp__plugin_aztec_aztec__aztec_search_code",
-      "mcp__plugin_aztec_aztec__aztec_read_file",
-      "mcp__plugin_aztec_aztec__aztec_read_example",
-      "mcp__plugin_aztec_aztec__aztec_list_examples",
-      "mcp__plugin_aztec_aztec__aztec_lookup_error",
-      "mcp__plugin_aztec_aztec__aztec_sync_repos"
+      "mcp__aztec-mcp__aztec_status",
+      "mcp__aztec-mcp__aztec_search_docs",
+      "mcp__aztec-mcp__aztec_search_code",
+      "mcp__aztec-mcp__aztec_read_file",
+      "mcp__aztec-mcp__aztec_read_example",
+      "mcp__aztec-mcp__aztec_list_examples",
+      "mcp__aztec-mcp__aztec_lookup_error",
+      "mcp__aztec-mcp__aztec_sync_repos"
     ]
   }
 }

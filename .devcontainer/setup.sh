@@ -18,11 +18,8 @@ if ! grep -q '.aztec/current' "$HOME/.bashrc" 2>/dev/null; then
   echo 'export PATH="$HOME/.aztec/current/bin:$HOME/.aztec/current/node_modules/.bin:$HOME/.nargo/bin:$PATH"' >> "$HOME/.bashrc"
 fi
 
-echo "==> Installing Aztec Claude plugin..."
-claude plugin marketplace add critesjosh/aztec-claude-plugin
-
-echo "==> Adding Noir MCP server..."
-claude mcp add noir -- npx noir-mcp-server@latest
+echo "==> Adding Aztec MCP server..."
+claude mcp add aztec-mcp -- npx --prefer-online -y @aztec/mcp-server@latest
 
 echo "==> Adding 'yolo' command..."
 mkdir -p "$HOME/.local/bin"
