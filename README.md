@@ -19,7 +19,7 @@ A development environment for building [Aztec](https://aztec.network) smart cont
 
 ```bash
 # Clone the template (or click "Use this template" on GitHub first)
-git clone https://github.com/YOUR_USERNAME/aztec-dev-env.git
+git clone https://github.com/critesjosh/aztec-dev-env.git
 cd aztec-dev-env
 
 # Start the container (first run takes a few minutes to install tooling)
