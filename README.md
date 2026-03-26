@@ -48,18 +48,6 @@ If this is your first time, log in with `claude login` (Claude subscription) or 
 
 Claude has full permissions to run commands, edit files, and use all Aztec MCP tools without asking for approval.
 
-### Useful Slash Commands
-
-| Command                         | Description                            |
-| ------------------------------- | -------------------------------------- |
-| `/aztec:new-contract <name>`    | Create a new Aztec contract            |
-| `/aztec:review-contract <path>` | Review a contract for best practices   |
-| `/aztec:add-function <desc>`    | Add a function to an existing contract |
-| `/aztec:add-test <desc>`        | Add a test for a contract function     |
-| `/aztec:explain <concept>`      | Explain an Aztec concept               |
-| `/aztec:deploy <contract>`      | Generate a deployment script           |
-| `/aztec-version`                | Check or switch Aztec version          |
-
 ### Example Workflow
 
 ```
